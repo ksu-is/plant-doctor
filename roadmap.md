@@ -9,4 +9,12 @@
 - [x] Create a Word document with initial ideas for code, including keywords to be found in user input
 
 ## Sprint 2
-- [ ] Begin coding the primary app function, plant-doctor
+- [ ] Begin coding the primary app function, plant-doctor, using Word document
+- [ ] Create GUI based on the mockup from Sprint 1
+    - [ ] 6 commits required
+
+## Sprint 3
+- [ ] Finalize coding plant-doctor function
+- [ ] Test for any bugs
+- [ ] Finalize GUI
+- [ ] Create PPT slide and submit
