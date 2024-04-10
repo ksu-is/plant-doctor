@@ -1,3 +1,19 @@
+import tkinter as tk
+from customtkinter import *
+
+app = CTk()
+app.geometry("500x400")
+app.title("The Plant Doctor")
+
+set_appearance_mode("light")
+
+
+btn = CTkButton(master=app, text="Click me.") # test button from YT tutorial
+btn.place(relx=0.5, rely=0.5, anchor="center")
+
+
+app.mainloop()
+
 recommendations = {
     "Leaves turning yellow near the tip": "Leaves turning yellow at the tips indicates that the plant is not receiving enough water. Try watering thoroughly until water comes out of the drainage holes.",
     "Leaves turning yellow near the stem": "Leaves turning yellow at the base indicates that the plant is receiving too much water. The 'poke' test is an easy way to determine if your plant needs water. Try inserting a wooden stick or your finger into the top inch of soil. Once the top inch of soil feels dry, give the plant water!",
