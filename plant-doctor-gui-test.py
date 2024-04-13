@@ -26,45 +26,54 @@ welcome_title = ctk.CTkLabel(
     text=("Welcome! What is your name?"),
     font=h1,
     width = 500,
-    pady = 20)
+    pady = 20,
+    wraplength=400)
 welcome_title.place(anchor=tk.CENTER)
 welcome_title.pack()
 
 # entry box for username
 
+name_var = tk.StringVar()
+
 username = ctk.CTkEntry(
     welcome,
+    textvariable = name_var,
     placeholder_text="Please type your name here...",
     width = 200)
 username.pack()
-name = username.get()
 
-# function to move to input page
+# function to update the input_title variable to include the user's name
+
+def update_input_title():
+    input_title.configure(text="Hello, " + name_var.get().capitalize() + "! What is going on with your plant?")
+
+# function to move to input page & update the input_title variable
 
 def to_input():
+    update_input_title()
     input.tkraise()
 
+# Define the button to move to the input page
 enter = ctk.CTkButton(
     welcome,
     text="Let's get started!",
-    command = to_input # run function on button click
+    font = buttontxt,
+    command=to_input
 )
 enter.pack()
 
 # page that welcomes you by name and asks for user input
-
 input = Frame(app)
 input.grid(row=0, column=0, sticky="nsew")
 
 # title of input page
-
 input_title = ctk.CTkLabel(
     input,
-    text=("Hello " + name + "! What is going on with your plant?"),
+    text="",
     font=h1,
-    width = 500,
-    pady = 20)
-input_title.place(anchor=tk.CENTER)
+    width=500,
+    pady=20,
+    wraplength=400)
 input_title.pack()
 
 # symptom entry box
@@ -72,13 +81,40 @@ input_title.pack()
 symptomentry = ctk.CTkEntry(
     input,
     placeholder_text = "Describe your plant's symptoms here...",
-    width = 450
+    width = 450,
+    height = 200,
 )
+symptomentry.pack()
+
+def submit_symptoms():
+    print(symptomentry.get())
+
+def to_recommendation():
+    recommendation.tkraise()
+
+to_rec_button = ctk.CTkButton(
+    input,
+    text = "Get Recommendations",
+    font = buttontxt,
+    command = to_recommendation
+)
+to_rec_button.pack()
 
 # page that displays recommendations based on user input
 
 recommendation = Frame(app)
 recommendation.grid(row=0, column=0, sticky="nsew")
+
+recommendations_title = ctk.CTkLabel(
+    recommendation,
+    text=("Here are some recommendations:"),
+    font=h1,
+    width = 500,
+    pady = 20,
+    wraplength=400)
+recommendations_title.place(anchor=tk.CENTER)
+recommendations_title.pack()
+recommendations_title.pack()
 
 welcome.tkraise()
 app.geometry("500x400")
