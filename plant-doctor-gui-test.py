@@ -3,6 +3,7 @@ from tkinter import *
 import customtkinter as ctk
 from tkinter import font
 from customtkinter import *
+from PIL import Image
 
 app = ctk.CTk()
 
@@ -13,6 +14,11 @@ h2 = ctk.CTkFont(family="Abril Display", size=24)
 h2 = ctk.CTkFont(family="Abril Display", size=24)
 body = ctk.CTkFont(family="Abril Display", size=24)
 buttontxt = ctk.CTkFont(family="Abril Display", size=24)
+
+# defining a CTkImage variable for use throughout the app
+
+logo = CTkImage(light_image=Image.open()
+    )
 
 # page that says hello and asks for your name
 
