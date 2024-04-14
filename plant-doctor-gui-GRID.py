@@ -11,6 +11,12 @@ dgreen = '#2F3D2A'
 
 app = ctk.CTk(fg_color = tan)
 
+#configuring the grid
+
+app.columnconfigure(0, weight=1) # row 1
+app.columnconfigure(1, weight=1) # row 2
+app.columnconfigure(2, weight=1) # row 3
+
 # creating variables with font info to make it easer to style the text
 
 h1 = ctk.CTkFont(family="Blue_Cashews", size=32)
@@ -73,8 +79,7 @@ welcome_title = ctk.CTkLabel(
     width = 800,
     pady = 20,
     wraplength=600)
-welcome_title.place(anchor=tk.CENTER)
-welcome_title.pack()
+welcome_title.grid()
 
 # entry box for username
 
@@ -85,7 +90,7 @@ username = ctk.CTkEntry(
     textvariable = name_var,
     placeholder_text="Please type your name here...",
     width = 200)
-username.pack()
+username.grid()
 
 # function to update the input_title variable to include the user's name
 
@@ -105,9 +110,9 @@ enter = ctk.CTkButton(
     font = buttontxt,
     command=to_input
 )
-enter.pack()
+enter.grid()
 
-welcome_logo_label.pack()
+welcome_logo_label.grid()
 
 # INPUT PAGE
 # title of input page
@@ -120,7 +125,7 @@ input_title = ctk.CTkLabel(
     width=800,
     pady=20,
     wraplength=600)
-input_title.pack()
+input_title.grid()
 
 # symptom entry box
 
@@ -130,7 +135,7 @@ symptomentry = ctk.CTkEntry(
     width = 450,
     height = 200,
 )
-symptomentry.pack()
+symptomentry.grid()
 
 def submit_symptoms():
     print(symptomentry.get())
@@ -144,7 +149,7 @@ to_rec_button = ctk.CTkButton(
     font = buttontxt,
     command = to_recommendation
 )
-to_rec_button.pack()
+to_rec_button.grid()
 
 # RECOMMENDATION PAGE
 # recommendations page title
@@ -158,7 +163,7 @@ recommendations_title = ctk.CTkLabel(
     pady = 20,
     wraplength=600)
 recommendations_title.place(anchor=tk.CENTER)
-recommendations_title.pack()
+recommendations_title.grid()
 
 welcome.tkraise()
 app.geometry("800x600")
