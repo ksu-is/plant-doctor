@@ -4,6 +4,7 @@ import customtkinter as ctk
 from tkinter import font
 from customtkinter import *
 from PIL import Image
+from PIL import Image, ImageTk
 
 tan = '#DDD0B6'
 dtan = '#BFAF94'
@@ -28,22 +29,22 @@ buttontxt = ctk.CTkFont(family="DM Sans Bold", size=16)
 
 # page that says hello and asks for your name
 
-welcome = Frame(
+welcome = ctk.CTkFrame(
     app,
-    bg = tan)
+    fg_color = tan)
 welcome.grid(row=0, column=0, sticky="nsew")
 
 # page that welcomes you by name and asks for user input
-input = Frame(
+input = ctk.CTkFrame(
     app,
-    bg = tan)
+    fg_color = tan)
 input.grid(row=0, column=0, sticky="nsew")
 
 # page that displays recommendations based on user input
 
-recommendation = Frame(
+recommendation = ctk.CTkFrame(
     app,
-    bg = tan)
+    fg_color = tan)
 recommendation.grid(row=0, column=0, sticky="nsew")
 
 # defining logo variables for whole app
@@ -51,7 +52,7 @@ recommendation.grid(row=0, column=0, sticky="nsew")
 welcome_logo = CTkImage(
     light_image=Image.open("logo-pngs/PlantDoctor_Logo-06.png"),
     dark_image=Image.open("logo-pngs/PlantDoctor_Logo-06.png"),
-    size=(300,200)
+    size=(200,105)
     )
 welcome_logo_label = ctk.CTkLabel(welcome, image=welcome_logo, text = "")
 
@@ -71,6 +72,8 @@ recommendation_logo_label = ctk.CTkLabel(recommendation, image=recommendation_lo
 
 # WELCOME PAGE
 # title of welcome page
+
+welcome_logo_label.grid()
 
 welcome_title = ctk.CTkLabel(
     welcome,
@@ -104,7 +107,7 @@ username.grid()
 # function to update the input_title variable to include the user's name
 
 def update_input_title():
-    input_title.configure(text="Hello, " + name_var.get().capitalize() + "! What is going on with your plant?")
+    input_title.configure(text="Hello, " + name_var.get().capitalize() + "!\nWhat is going on with your plant?")
 
 # function to move to input page & update the input_title variable
 
@@ -126,9 +129,9 @@ enter = ctk.CTkButton(
     border_width = 0,
     hover_color = dgreen
 )
-enter.grid()
-
-welcome_logo_label.grid()
+enter.grid(
+    pady = 10
+)
 
 # INPUT PAGE
 # title of input page
@@ -172,13 +175,15 @@ to_rec_button = ctk.CTkButton(
     text_color = tan,
     command=to_recommendation,
     fg_color = lgreen,
-    width = 230,
+    width = 265,
     height = 40,
     corner_radius = 10,
     border_width = 0,
     hover_color = dgreen
 )
-to_rec_button.grid()
+to_rec_button.grid(
+    pady = 10
+)
 
 # RECOMMENDATION PAGE
 # recommendations page title
