@@ -6,6 +6,7 @@ from customtkinter import *
 from PIL import Image
 
 tan = '#DDD0B6'
+dtan = '#BFAF94'
 lgreen = '#3D5535'
 dgreen = '#2F3D2A'
 
@@ -22,8 +23,8 @@ app.columnconfigure(2, weight=1) # row 3
 h1 = ctk.CTkFont(family="Blue_Cashews", size=32)
 h2 = ctk.CTkFont(family="Abril Display", size=28)
 h2 = ctk.CTkFont(family="Abril Display", size=24)
-body = ctk.CTkFont(family="DM Sans", size=16)
-buttontxt = ctk.CTkFont(family="DM Sans", size=16)
+body = ctk.CTkFont(family="DM Sans Medium", size=16)
+buttontxt = ctk.CTkFont(family="DM Sans Bold", size=16)
 
 # page that says hello and asks for your name
 
@@ -89,7 +90,15 @@ username = ctk.CTkEntry(
     welcome,
     textvariable = name_var,
     placeholder_text="Please type your name here...",
-    width = 200)
+    width = 230,
+    height = 40,
+    corner_radius = 10,
+    fg_color = tan,
+    placeholder_text_color = dtan,
+    text_color = lgreen,
+    font = body,
+    border_width = 1,
+    border_color = lgreen)
 username.grid()
 
 # function to update the input_title variable to include the user's name
@@ -106,9 +115,16 @@ def to_input():
 # Define the button to move to the input page
 enter = ctk.CTkButton(
     welcome,
-    text="Let's get started!",
+    text="LET'S GET STARTED!",
     font = buttontxt,
-    command=to_input
+    text_color = tan,
+    command=to_input,
+    fg_color = lgreen,
+    width = 230,
+    height = 40,
+    corner_radius = 10,
+    border_width = 0,
+    hover_color = dgreen
 )
 enter.grid()
 
@@ -134,7 +150,13 @@ symptomentry = ctk.CTkEntry(
     placeholder_text = "Describe your plant's symptoms here...",
     width = 450,
     height = 200,
-)
+    corner_radius = 10,
+    fg_color = tan,
+    placeholder_text_color = dtan,
+    text_color = lgreen,
+    font = body,
+    border_width = 1,
+    border_color = lgreen)
 symptomentry.grid()
 
 def submit_symptoms():
@@ -145,9 +167,16 @@ def to_recommendation():
 
 to_rec_button = ctk.CTkButton(
     input,
-    text = "Get Recommendations",
+    text = "GET RECOMMENDATIONS",
     font = buttontxt,
-    command = to_recommendation
+    text_color = tan,
+    command=to_recommendation,
+    fg_color = lgreen,
+    width = 230,
+    height = 40,
+    corner_radius = 10,
+    border_width = 0,
+    hover_color = dgreen
 )
 to_rec_button.grid()
 
