@@ -15,7 +15,9 @@
 - [x] Finish creating the GUI including three primary frames 
 
 ## Sprint 3
-- [ ] Finalize coding plant-doctor function
+- [x] Finalize coding plant-doctor function
+- [x] Integrate the plant-doctor function into my GUI
+- [ ] Finish out the dictionary
 - [ ] Test for any bugs
-- [ ] Finalize GUI
+- [ ] Make last design changes to GUI
 - [ ] Create PPT slide and submit
