@@ -14,14 +14,65 @@ care_recommendations = {
         "Yellow leaves at the tip may indicate nutrient deficiency. Consider fertilizing the plant with a balanced fertilizer."
     ],
     'brown': [
-        "Brown spots may indicate a fungal infection. Consider trimming affected areas and applying a fungicide."
+        "A brown leaf can often be a sign of over- or underwatering. Make sure that the plant is in a pot with drainage holes and well-draining soil. If you have a hard time watering often enough, try mixing a handul of earthworm castings into your soil to add extra moisture retention."
     ],
     'wilt': [
         "Wilting can be a sign of underwatering. Make sure the plant is receiving adequate water, and adjust watering frequency as needed."
     ],
     'leggy': [
-        "Leggy growth often occurs in low light conditions. Move the plant to a brighter location and consider pruning to encourage bushier growth."
-    ]
+        "Leggy growth often occurs in low light conditions. Move the plant to a brighter location and cut back leggy growth to encourage fuller growth. If you don't have a bright window, consider investing in some grow light bulbs or strips."
+    ],
+    'spot' : [
+        "Spots on a plant's leaves can be caused by several factors, but the most common cause is fungal diseases from overwatering. Try wiping the plant down with a neem oil mixture to eliminate and fungus or pests. Also, mix a small amount of hydrogen peroxide into the can before your next watering to remove fungus on the roots."
+    ],
+    'bug' : [
+        "Bugs are normal, but some types are more harmful than others. Try mixing a tablespoon of neem oil into a spray bottle full of water. For extra strength, add a few drops of peppermint essential oil. Spray leaves, stems, and soil thoroughly to kill most bugs and any eggs they may have laid."
+    ],
+    'pale' : [
+        "Pale yellow-green growth is a sign of nutrient deficiency. Try investing in a high-quality liquid fertilizer. Mixing pellet fertilizer into your soil also makes it easy to keep the soil full of nutrients."
+    ],
+    'mushy' : [
+        "A mushy stem can be caused by excessive water in the soil. Try mixing perlite or pumice into your soil to add extra drainage. Mushy stems are also common to plants that grow from bulbs, like alocasias. In this case, you have nothing to worry about!"
+    ],
+    'soil' : [
+        "There is a lot to be said about soil. There are three main components to a good soil: moisture retention, drainage, and nutrients. A common mix is coco coir for moisture retention, perlite, pumice, or orchid bark for drainage, and a fertilzer of some sort for nutrients. For bonus points, add in coconut bark or horicultural charcoal for added benefits. The ratio of ingredients depends on the plant."
+    ],
+    'compact' : [
+        "As soil ages, it is common for it to become compacted. Try using a wooden chopstick to gently poke holes into the soil. For plants in plastic pots, squeeze the pot to loosen the soil. If these tips do not add enough aeration, it may be time for a repot."
+    ],
+    'smell' : [
+        "If you notice a bad smell coming from your plant, it likely indicates root rot or another fungal infection. Try mixing some hydrogen peroxide into the can during your next watering. If the issue persists, try repotting into a potting soil with added drainage."
+    ],
+    'root' : [
+        "Roots coming out of the pot indicate a 'rootbound' plant, which means it has outgrown its pot. Repot the plant into a pot that is 1-2 inches larger than its current pot. For example, if its current pot is 4 inches in diameter, upgrade to a pot 6 inches in diameter or smaller. If necessary, carefully trim any excessive roots during the repot process."
+    ],
+    'rot' : [
+        "Root rot is commonly caused by too much moisture in the soil. Try mixing perlite or pumice into the soil for added drainage. If the root rot is bad, remove the plant from its pot, gently remove as much soil as possible, and trim any brown or soft roots. Spray the root ball with a mixture of 1:10 hydrogen peroxide to water. Rinse thoroughly with clean water before repotting into a chunkier soil mix."
+    ],
+    'web' : [
+        "Fine, white webs on a plant come from spider mites. Try mixing a tablespoon of neem oil into a spray bottle full of water. For extra strength, add a few drops of peppermint essential oil. Spray leaves, stems, and soil thoroughly to kill most bugs and any eggs they may have laid."
+    ],
+    'mold' : [
+        "Mold on the soil's surface is a result of inadequate air flow. This can also be caused by soil that does not dry out quickly enough. Use a clean spoon to remove the top inch of soil from the plant. Try placing a small fan near the plant to increase air flow. If the mold comes back again, try repotting into a chunkier soil mix."
+    ],
+    'burn' : [
+        "Burns on a plants leaves can come from 2 things: too much sun or too much fertilizer. If your plant is receiving too much sunlight, try moving it or hanging a sheer curtain in the window to filter the light. If the plant is receiving too much fertilizer, try flushing the soil thoroughly with clean water. Use a lower concentration of fertilizer. Often, using 1/4 of what the manufacturer's instructions recommend at every water should help avoid nutrient burn."
+    ],
+    'overwater' : [
+        "Overwatering happens! If you are afraid you overwatered your plant, try gently removing the soil from the pot, keeping it all in one piece. Wrap the soil ball in several layers of newspaper. If you are afraid to overwater again, try mixing perlite or pumice into your soil. For added benefits, add extra drainage holes to the plant's pot."
+    ],
+    'dying' : [
+        "A dying leaf is not always cause for alarm. Many plants will simply drop one leaf to make room for new growth. However, if you notice many leaves dying rapidly, that may indicate your plant is not receiving the care it needs. Try going back and provide more details so that the Plant Doctor can provide recommendations."
+    ],
+    'red spot' : [
+        "Red spots on a plant, or oedema, are caused by excess moisture. These dots form when the plant takes up more water than can be transpired through the leaves. As a result, the cell burst and turn an orange-red color. Try watering less frequently or mixing perlite/pumice into your plant's soil mixture."
+    ],
+    'crisp' : [
+        "Crispy leaves are caused by too little moisture. Leaves may turn completely brown and crispy when the plant is not receiving enough water. On the other hand, brown, crunchy tips may be seen when the plant is not receiving enough humidity. Try watering the plant more often or using a more retentive soil mix. To add humidity, place a humidifier or essential oil diffuser near the plant. Be careful that the mist does not accumulate as drops on the leaves."
+    ],
+    'gnat' : [
+        "Try mixing a tablespoon of neem oil into a spray bottle full of water. For extra strength, add a few drops of peppermint essential oil. Spray leaves, stems, and soil thoroughly to kill most bugs and any eggs they may have laid."
+    ],
 }
 
 # creating primary function, plant_doctor
