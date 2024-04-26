@@ -77,19 +77,17 @@ care_recommendations = {
 
 # creating primary function, plant_doctor
 def plant_doctor(user_input):
-    keywords = []
+    keywords = set()  # Initialize a set to store unique keywords
+    recommendations = []  # Initialize list to store recommendations
     for word in user_input.split():
-        found_keyword = False
-        for keyword in care_recommendations.keys():
-            if keyword.lower() in word.lower() or word.lower() in keyword.lower():
-                keywords.append(keyword)
-                found_keyword = True
-                break
-        if not found_keyword:
-            keywords.append(word.lower())
-    recommendations = []
-    for keyword in keywords:
-        recommendations.extend(care_recommendations.get(keyword, []))
+        # check to see if user's entry is 3+ letters; prevents app from detecing non-keywords in the user's input, for example: detecting 'i' and displaying irrelevant recommendations for all keywords that include the letter 'i'
+        if len(word) >= 3:
+            for keyword in care_recommendations.keys():
+                if keyword.lower() in word.lower() or word.lower() in keyword.lower():
+                    if keyword not in keywords:  # check to see if the recommendation has already been used; only display recommendations once
+                        keywords.add(keyword)  # Add keyword to set
+                        recommendations.extend(care_recommendations[keyword])  # add recommendations for keyword
+                    break
     return recommendations
 
 ##################### GUI #####################
@@ -238,18 +236,17 @@ input_title = ctk.CTkLabel(
 input_title.grid(pady=(100, 10))
 
 # entry box to accept user's input
-symptomentry = ctk.CTkEntry(
+symptomentry = ctk.CTkTextbox( # ctk textbox used in place of entry allow better formatting, like wrap
     input,
-    placeholder_text="Describe your plant's symptoms here...",
     width=450,
     height=200,
     corner_radius=10,
     fg_color=tan,
-    placeholder_text_color=dtan,
     text_color=lgreen,
     font=body,
     border_width=1,
-    border_color=lgreen
+    border_color=lgreen,
+    wrap='word'
 )
 symptomentry.grid()
 
@@ -316,16 +313,16 @@ def to_input():
 
 # function to submit symptoms and display recommendations
 def submit_symptoms():
-    user_input = symptomentry.get()
-    recommendations =plant_doctor(user_input)
-    recommendation_text.configure(state='normal')  # Enable text widget for editing
-    recommendation_text.delete('1.0', END)  # Clear previous recommendations
+    user_input = symptomentry.get("1.0", "end-1c")  # retrieve all text from the textbox
+    recommendations = plant_doctor(user_input)
+    recommendation_text.configure(state='normal')  # enable text widget for editing
+    recommendation_text.delete('1.0', 'end')  # clear previous recommendations
     if recommendations:
         for recommendation in recommendations:
-            recommendation_text.insert(END, "- " + recommendation + "\n\n")
+            recommendation_text.insert('end', "- " + recommendation + "\n\n")
     else:
-        recommendation_text.insert(END, "No matching recommendations found. Please try different keywords or describe the issue in more detail.")
-    recommendation_text.configure(state='disabled')  # Disable text widget after editing
+        recommendation_text.insert('end', "No matching recommendations found. Please try different keywords or describe the issue in more detail.")
+    recommendation_text.configure(state='disabled')  # disable text widget after editing
     recommendation_page.tkraise()
 
 # button that takes user back to the input page to ask another question
@@ -346,7 +343,8 @@ back_to_input_button.grid(pady=10)
 
 # function for the above the button to take user back to the last page
 def back_to_input():
-    input.tkraise()
+    symptomentry.delete('1.0', 'end')  # remove previous entry
+    input.tkraise()  # go back to input page
 
 welcome.tkraise()
 app.geometry("800x600")
