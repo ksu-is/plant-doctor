@@ -17,7 +17,8 @@
 ## Sprint 3
 - [x] Finalize coding plant-doctor function
 - [x] Integrate the plant-doctor function into my GUI
-- [ ] Finish out the dictionary
+- [x] Finish out the dictionary
+- [ ] Add recommendations for specific plant types
 - [ ] Test for any bugs
 - [ ] Make last design changes to GUI
 - [ ] Create PPT slide and submit
