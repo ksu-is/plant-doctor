@@ -9,6 +9,80 @@ from PIL import Image, ImageTk
 ##################### FUNCTION #####################
 # defining a dictionary of keywords with associated recommendations
 care_recommendations = {
+    'monstera' : [
+        "Monstera are popular houseplants with unique, fenestrated leaves. Here are some essential care tips for your monstera:",
+        "Monsteras like chunky soil with lots of perlite, bark, and nutrients. Make sure that the soil drains thorgouly with every water.",
+        "Monsteras like to dry out between waterings. Make sure that the top 1-2 inches of soil are dry before watering again. Too much water can lead to root rot, so be sure to test the soil before watering.",
+        "Be sure to give your monstera bright, indirect light. A south- or west-facing window is perfect. If the light is too direct, try adding a sheer curtain to diffuse the light.",
+        "For best results, add a support pole to your monstera. These tropical plants like to climb, and a support pole will allow them to produce larger leaves with more fenestrations."
+    ],
+    'snake' : [
+        "Snake plants, also called mother in law's tongue, are popular houseplants for beginners with tall, pointy leaves. Here are some essential care tips for your snake plant:",
+        "Snake plants like very chunky soils--similar to what you would use for a cactus. Be sure to include lots of perlite and bark for quick drainage.",
+        "Snake plants don't need very much water, which makes them great for beginners. These plants only need water 2-3 times per month and should be watered when the soil is almost entirely dry.",
+        "Snake plants can handle nearly any lighting conditions. They will do well in low-medium light, and they can handle bright, direct sunlight.",
+        "Snake plants produce 'pups,' or baby plants that come off the main plant. These pups can be divided and planted into their own pot. Or leave them in the pot for an extra full plant!"
+    ],
+    'pothos' : [
+        "Pothos are fast-growing, vine plants with bright green foliage. They come in many varieties, such as the marble queen or golden pothos. Here are some essential care tips for your pothos plant:",
+        "Pothos like a medium-draining soil that retains some moisture. Use a balanced blend of coco coir, perlite, and bark.",
+        "Water your pothos every 1-2 weeks or when the top 2 inches of soil are dry. These plants don't need much to grow quickly!",
+        "Pothos will do well in medium- to bright-light environments. The brighter the light, the more dramatic their markings will be.",
+        "Pothos are one of the easiest plants to propagate. Simply cut the vine below a leaf and place in water. Once the leaf has grown several inches of roots, pot into soil and water very thoroughly. Soon, you will have a whole new plant!"
+    ],
+    'ZZ' : [
+        "ZZ plants are low-maintenance plants with unique growth patterns. Here are some essential care tips for your ZZ plant:",
+        "Pot your ZZ plant into well draining soil, similar to what you would use for a cactus. Make sure that the soil drains thoroughly with every water.",
+        "ZZ plants don't need much water. In fact, you can get away with only watering these plants 1-2 times per month.",
+        "ZZ plants can handle nearly all lighting conditions. The brighter the light, the quicker the growth and the more intense the color variations.",
+    ],
+    'rubber' : [
+        "Rubber plants, or ficus elastica, are tree-like plants with shiny, dark green leaves. They come in many varieties, such as the ficus rubra or ficus tineke. Here are some essential care tips for your rubber plant:",
+        "Rubber plants do well in a medium-draining soil that retains some moisture. Use a balanced blend of coco coir, perlite, and bark.",
+        "Rubber plants do well with weekly waterings or when the top 1 inch of soil has dried out.",
+        "Rubber plants like medium- to bright-light environments, but can do well in lower light situations. For variegated varieties, place in a brighter spot to see more vibrant pink and white leaves."
+    ],
+    'philodendron' : [
+        "Philodendrons are fast-growing, vine plants with varying leaf shapes. Some species of philodendrons climb and produce large leaves, while others trail and have smaller leaves. Here are some essential care tips for your philodendrons:",
+        "Philodendrons do well in a well-draining soil. Use a balanced mix of coco coir, perlite, and bark. For larger varieties, consider adding some coco bark for the roots to grab onto.",
+        "Water your philodendron when the top 1-2 inches of soil have dried out. Philodendron leaves may curl when they have dried out too much.",
+        "Philodendrons do well in medium- to bright-light environments. Climbing philodendrons will grow facing the light source. Try rotating these plants after every watering to encourage even growth.",
+        "For climbing varieties, add a support pole for best results. These tropical plants like to climb, and a support pole will allow them to produce larger leaves."
+    ],
+    'fiddle' : [
+        "Fiddle-leaf figs are tree-like ficuses with rounded leaves. They are known for being quite temperamental. Here are some essential care tips for your fiddle-leaf fig:",
+        "Fiddle-leaf figs, or FLFs, like a medium-draining soil with lots of perlite and bark.",
+        "Water your FLF when the top 1-2 inches of soil are dry. These plants are sensitive to water, so be sure to check the soil frequently.",
+        "FLFs like lots of bright light. Place this plant near a south- or west-facing window that receives 6+ hours of bright light every day.",
+        "Fiddle-leaf figs are sensitive to cold air and may drop several leaves when exposed to drafts. Keep these plants away from air conditioning vents and drafty windows in the winter time."
+    ],
+    'anthurium' : [
+        "Anthurium are tropical plants with varying, heart-shaped foliage. Some varieties of anthuriums produce colorful flowers, while others may never produce flowers as a houseplant. Here are some essential care tips for your anthurium:",
+        "Consider making a special soil mix for your anthurium including sphagnum moss, perlite, and coco bark. The soil should be light and airy for the thick roots while also retaining some moisture.",
+        "These plants like to remain consistently moist, so water when the top 1 inch of soil mix is dry. Consider bottom watering to ensure that the sphagnum moss is thoroughly moistened.",
+        "These plants like medium or bright, indirect light. Too much direct sunlight may burn their velvety leaves.",
+        "Most varieties of anthuriums have velvety, rich green leaves. Try placing them near a humidifier to keep the leaves extra healthy. Most anthuriums need to stay above 65% humidity for best results, but they will be okay with humidity above 45%."
+    ],
+    'palm' : [
+        "Palms are dramatic plants with fan-shaped leaves. Here are some essential care tips for your palm trees:",
+        "Palms like very retentive soil. Consider mixing coco coir with some perlite and bark. Add some earthworm castings for extra retention.",
+        "Palms need lots of water and will benefit from weekly waterings. Be sure to water thoroughly until water comes out of the drainage holes.",
+        "These plants need bright light. Consider placing in a south- or west-facing window, or even on a sunny back porch.",
+        "Palms are prone to getting thrips and several other common pests. Wipe your palm tree down with a neem oil mixture at least once per month. Add peppermint essential oil for extra strength."
+    ],
+    'hoya' : [
+        "Hoyas are beautiful, vine plants that come in many different varieties. These aroids are great for beginners, as well as seasoned plant parents. Here are some essential care tips for your hoyas:",
+        "Hoyas like a chunky, well-draining soil. Consider creating a mix of coco bark and perlite. For added moisture retention add a small amount of coco coir to the soil.",
+        "These tropical plants don't need water very often. Water them very thoroughly and ensure that there is no standing water in the drainage tray.",
+        "Hoyas thrive in bright, direct sunlight. Many hoyas also produce bright red or pink leaves under bright lights. Consider investing in some grow lights for these plants.",
+        "Hoyas produce beautiful clusters of flowers with strong, sweet fragrances. Place these plants under bright lights to encourage flowering. Once the plant has produced a peduncle, be sure not to cut it off--more flowers will grow from the same spot!"
+    ],
+    'cactus' : [
+        "Cacti are desert plants that thrive with minimal care. Here are some essential care tips for your cactus:",
+        "Cacti need a very well-draining soil consisting of perlite, bark, and pumice. Cactus soil can be found easily at grocery stores and hardware stores.",
+        "These desert plants need water 1-2 times per month. You may notice some wrinkles on the cactus; this indicates that it is time for water. If you notice any mushy spots, reduce watering frequency.",
+        "Cacti need bright, direct sunlight."
+    ],
     'yellow': [
         "Yellow leaves at the base may indicate overwatering. Try reducing the frequency of watering and ensure proper drainage.",
         "Yellow leaves at the tip may indicate nutrient deficiency. Consider fertilizing the plant with a balanced fertilizer."
