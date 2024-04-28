@@ -120,7 +120,7 @@ care_recommendations = {
     'root' : [
         "Roots coming out of the pot indicate a 'rootbound' plant, which means it has outgrown its pot. Repot the plant into a pot that is 1-2 inches larger than its current pot. For example, if its current pot is 4 inches in diameter, upgrade to a pot 6 inches in diameter or smaller. If necessary, carefully trim any excessive roots during the repot process."
     ],
-    'rot' : [
+    'rott' : [
         "Root rot is commonly caused by too much moisture in the soil. Try mixing perlite or pumice into the soil for added drainage. If the root rot is bad, remove the plant from its pot, gently remove as much soil as possible, and trim any brown or soft roots. Spray the root ball with a mixture of 1:10 hydrogen peroxide to water. Rinse thoroughly with clean water before repotting into a chunkier soil mix."
     ],
     'web' : [
@@ -155,7 +155,7 @@ def plant_doctor(user_input):
     recommendations = []  # Initialize list to store recommendations
     for word in user_input.split():
         # check to see if user's entry is 3+ letters; prevents app from detecing non-keywords in the user's input, for example: detecting 'i' and displaying irrelevant recommendations for all keywords that include the letter 'i'
-        if len(word) >= 3:
+        if len(word) >= 4:
             for keyword in care_recommendations.keys():
                 if keyword.lower() in word.lower() or word.lower() in keyword.lower():
                     if keyword not in keywords:  # check to see if the recommendation has already been used; only display recommendations once
