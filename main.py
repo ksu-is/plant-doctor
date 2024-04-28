@@ -371,12 +371,16 @@ recommendation_text = ctk.CTkTextbox(
     text_color=lgreen,
     font=body,
     border_width=1,
-    border_color=lgreen
+    border_color=lgreen,
+    scrollbar_button_color=tan,
+    scrollbar_button_hover_color=tan
 )
 recommendation_text.grid(row=1, column=0)
 
 #setting up the scrollbar
-scrollbar = tk.Scrollbar(recommendation_page, command=recommendation_text.yview)
+scrollbar = Scrollbar(
+    recommendation_page,
+    command=recommendation_text.yview)
 scrollbar.grid(row=1, column=1, sticky='ns')
 recommendation_text.configure(yscrollcommand=scrollbar.set)
 
