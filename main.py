@@ -99,7 +99,7 @@ care_recommendations = {
     'spot' : [
         "Spots on a plant's leaves can be caused by several factors, but the most common cause is fungal diseases from overwatering. Try wiping the plant down with a neem oil mixture to eliminate and fungus or pests. Also, mix a small amount of hydrogen peroxide into the can before your next watering to remove fungus on the roots."
     ],
-    'bug' : [
+    'bugs' : [
         "Bugs are normal, but some types are more harmful than others. Try mixing a tablespoon of neem oil into a spray bottle full of water. For extra strength, add a few drops of peppermint essential oil. Spray leaves, stems, and soil thoroughly to kill most bugs and any eggs they may have laid."
     ],
     'pale' : [
@@ -123,7 +123,7 @@ care_recommendations = {
     'rott' : [
         "Root rot is commonly caused by too much moisture in the soil. Try mixing perlite or pumice into the soil for added drainage. If the root rot is bad, remove the plant from its pot, gently remove as much soil as possible, and trim any brown or soft roots. Spray the root ball with a mixture of 1:10 hydrogen peroxide to water. Rinse thoroughly with clean water before repotting into a chunkier soil mix."
     ],
-    'web' : [
+    'webs' : [
         "Fine, white webs on a plant come from spider mites. Try mixing a tablespoon of neem oil into a spray bottle full of water. For extra strength, add a few drops of peppermint essential oil. Spray leaves, stems, and soil thoroughly to kill most bugs and any eggs they may have laid."
     ],
     'mold' : [
@@ -151,15 +151,15 @@ care_recommendations = {
 
 # creating primary function, plant_doctor
 def plant_doctor(user_input):
-    keywords = set()  # Initialize a set to store unique keywords
-    recommendations = []  # Initialize list to store recommendations
+    keywords = set()  # initialize a set of keywords
+    recommendations = []  # initialize list of recommendations
     for word in user_input.split():
-        # check to see if user's entry is 3+ letters; prevents app from detecing non-keywords in the user's input, for example: detecting 'i' and displaying irrelevant recommendations for all keywords that include the letter 'i'
+        # check to see if user's entry is 4+ letters; prevents app from detecing non-keywords in the user's input, for example: detecting 'i' and displaying irrelevant recommendations for all keywords that include the letter 'i'
         if len(word) >= 4:
             for keyword in care_recommendations.keys():
                 if keyword.lower() in word.lower() or word.lower() in keyword.lower():
                     if keyword not in keywords:  # check to see if the recommendation has already been used; only display recommendations once
-                        keywords.add(keyword)  # Add keyword to set
+                        keywords.add(keyword)  # add keyword to set
                         recommendations.extend(care_recommendations[keyword])  # add recommendations for keyword
                     break
     return recommendations
@@ -377,7 +377,7 @@ recommendation_text = ctk.CTkTextbox(
 )
 recommendation_text.grid(row=1, column=0)
 
-#setting up the scrollbar
+# setting up the scrollbar
 scrollbar = Scrollbar(
     recommendation_page,
     command=recommendation_text.yview)
